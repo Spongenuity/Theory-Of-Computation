@@ -9,12 +9,13 @@ if (args.length != 1) {
 
 const filename = args[0];
 
-// !!!! IMPLEMENT ME
+fs.readFile(filename, 'utf8', function(err, data) {
+    if (err) throw err;
+    console.log('OK: ' + filename);
 
-// Read file
+let matches = data.match(/(www|http:|https:)+[^\s]+[\w]/g)
+let matchcount = data.match(/(www|http:|https:)+[^\s]+[\w]/g).length
 
-// Set up regex
-
-// Find matches
-
-// Print all matches
+console.log(`${matchcount} links`);
+console.log(matches);
+});
