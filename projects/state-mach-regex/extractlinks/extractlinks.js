@@ -13,8 +13,8 @@ fs.readFile(filename, 'utf8', function(err, data) {
     if (err) throw err;
     console.log('OK: ' + filename);
 
-let matches = data.match(/(www|http:|https:)+[^\s]+[\w]/g)
-let matchcount = data.match(/(www|http:|https:)+[^\s]+[\w]/g).length
+let matches = data.match(/(www|http:|https:)[^\s]+[\w]/g)
+let matchcount = data.match(/(www|http:|https:)[^\s]+[\w]/g).length
 
 console.log(`${matchcount} links`);
 console.log(matches);

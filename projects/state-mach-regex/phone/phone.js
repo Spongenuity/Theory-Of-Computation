@@ -3,7 +3,7 @@ var readline = require('readline');
 var rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
-  terminal: false
+  // terminal: false
 });
 
 
@@ -14,6 +14,8 @@ rl.on('line', function (line) {
     // !!!! IMPLEMENT ME
 
     // Come up with the phone regex
+    // let matches = line.match(/\d/g)
+    console.log('hello')
 
     // Find matches
 
