@@ -6,20 +6,17 @@ var rl = readline.createInterface({
   // terminal: false
 });
 
+const regex = /\(?(\d{3})\)?\s*-?\s*(\d{3})\s*-?\s*(\d{4})/;
+
 
 // This code reads a line at a time from stdin
 
 rl.on('line', function (line) {
+  const matches = line.match(regex);
 
-    // !!!! IMPLEMENT ME
-
-    // Come up with the phone regex
-    // let matches = line.match(/\d/g)
-    console.log('hello')
-
-    // Find matches
-
-    // If match found, print number with no spaces, parens, or dashes
-
-    // Else print that no number was found
+  if (matches === null) {
+      console.log("** çNo Phone Number Found **");
+  } else {
+      console.log(`Phone Number Found: ${matches[1]}${matches[2]}${matches[3]}`);
+  }
 });

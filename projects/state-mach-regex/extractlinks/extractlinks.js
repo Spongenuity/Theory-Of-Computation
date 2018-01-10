@@ -13,9 +13,14 @@ fs.readFile(filename, 'utf8', function(err, data) {
     if (err) throw err;
     console.log('OK: ' + filename);
 
-let matches = data.match(/(www|http:|https:)[^\s]+[\w]/g)
-let matchcount = data.match(/(www|http:|https:)[^\s]+[\w]/g).length
+// const regex = /https?:\/\/[w-_\d]+?\.[^'''\s]+/g;
+const regex = /https?:\/\/[^\\'">\s]+?\.[^\\'">\s]+/g;
 
-console.log(`${matchcount} links`);
+// let matches = data.match(/(www|http:|https:)[^\s]+[\w]/g)
+
+// let matchcount = data.match(/(www|http:|https:)[^\s]+[\w]/g).length
+const matches = data.match(regex);
+
+// console.log(`${matches.length} links`);
 console.log(matches);
 });
